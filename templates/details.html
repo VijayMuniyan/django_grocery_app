@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>View List</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        }
+    </head>
+    <body>
+      <form>
+        <div class="container mt-5">
+            <!-- top -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1>View Grocery List</h1>
+                    <a href={% url 'add' %}><br>Add_Item</a>
+                </div>
+
+
+                <div class="col-lg-6 float-right">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <!-- Date Filtering-->
+                            <input type="date" class="form-control" name="search">
+                        </div>
+                        <div class="col-lg-4">
+                            <input type="submit" class="btn btn-danger" value="filter">
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </form>
+            <!-- // top -->
+            <!-- Grocery Cards -->
+            <div class="row mt-4">
+                <!--- -->
+                <!-- Loop This -->
+                {% for i in data %}
+
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">{{i.Item_name}}</h5>
+                          <h6 class="card-subtitle mb-2 text-muted">{{i.Item_quantity}} Kg</h6>
+                          <p class="text-success">{{i.Item_status}}</p>
+
+                        </div>
+                      </div>
+                </div>
+                {% endfor %}
+                <!-- // Loop -->
+                <!--<div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Chicken</h5>
+                          <h6 class="card-subtitle mb-2 text-muted">2Kgs</h6>
+                          <p class="text-danger">NOT AVAILABLE</p>
+                        </div>
+                      </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Posto</h5>
+                          <h6 class="card-subtitle mb-2 text-muted">50gms</h6>
+                          <p class="text-info">PENDING</p>
+                        </div>
+                      </div>
+                </div>
+
+            </div>
+        </div>-->
+  
+        <a href={% url 'last' %}><br>Click here to Logout</a>
+    </body>
+</html>

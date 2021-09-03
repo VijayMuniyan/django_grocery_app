@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <style>h1 {
+  text-align: center;
+  color: blue;
+  font-size: 12em;
+
+}
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+  font-size: 3em;
+}
+</style>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% csrf_token %}
+    <link rel="stylesheet" href="{% static 'css/login_page.css' %}">
+
+    <body style="background-image: url('{% static "images/Login.jpg"%}')";>
+    <h1>Welcome to Grocery</h1>
+<a href={% url 'registration' %}><br>Click here to register </a>
+
+  </body>
+</html>
